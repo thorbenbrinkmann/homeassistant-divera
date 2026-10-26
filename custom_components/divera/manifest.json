@@ -1,9 +1,6 @@
 {
   "domain": "divera",
   "name": "DIVERA 24/7",
-  "categories": [
-    "messaging_notifications"
-  ],
   "codeowners": [
     "@thorbenbrinkmann"
   ],
