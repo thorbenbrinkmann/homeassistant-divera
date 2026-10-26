@@ -1,0 +1,113 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "DIVERA 24/7 account",
+        "description": "All units of the account and their vehicles are added automatically.",
+        "data": {
+          "access_key": "Access key",
+          "scan_interval": "Polling interval"
+        },
+        "data_description": {
+          "access_key": "Personal API access key, found in DIVERA 24/7 under Settings → Login → API-Keys.",
+          "scan_interval": "Fallback polling interval in seconds while the WebSocket connection is down."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-enter access key",
+        "description": "DIVERA 24/7 rejected the access key. Enter a valid one.",
+        "data": {
+          "access_key": "Access key"
+        },
+        "data_description": {
+          "access_key": "Personal API access key, found in DIVERA 24/7 under Settings → Login → API-Keys."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Access key was rejected by DIVERA 24/7.",
+      "cannot_connect": "Failed to connect to DIVERA 24/7.",
+      "no_units": "The account doesn't belong to any unit."
+    },
+    "abort": {
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "DIVERA 24/7 options",
+        "data": {
+          "scan_interval": "Polling interval"
+        },
+        "data_description": {
+          "scan_interval": "Fallback polling interval in seconds while the WebSocket connection is down."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "alarm_active": {
+        "name": "Active alarm",
+        "state": {
+          "on": "Alarm active",
+          "off": "No alarm"
+        }
+      },
+      "alarm_priority": { "name": "Alarm priority" },
+      "alarm_closed": { "name": "Alarm closed" }
+    },
+    "device_tracker": {
+      "alarm_location": { "name": "Alarm location" },
+      "vehicle_location": { "name": "Location" }
+    },
+    "event": {
+      "alarm": {
+        "name": "Alarm",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "new_alarm": "New alarm",
+              "alarm_closed": "Alarm closed"
+            }
+          }
+        }
+      }
+    },
+    "select": {
+      "user_status": { "name": "My status" }
+    },
+    "sensor": {
+      "alarm_title": { "name": "Alarm keyword" },
+      "alarm_text": { "name": "Alarm message" },
+      "alarm_address": { "name": "Alarm address" },
+      "alarm_date": { "name": "Alarm time" },
+      "alarm_vehicles": { "name": "Alarm vehicles" },
+      "alarm_id": { "name": "Alarm ID" },
+      "fms_status": {
+        "name": "FMS status",
+        "state": {
+          "0": "0 - Emergency call",
+          "1": "1 - Available on radio",
+          "2": "2 - Available at station",
+          "3": "3 - Responding",
+          "4": "4 - On scene",
+          "5": "5 - Request to speak",
+          "6": "6 - Not available",
+          "7": "7 - Patient loaded",
+          "8": "8 - At destination",
+          "9": "9 - Other"
+        }
+      },
+      "fms_note": { "name": "Status note" },
+      "fms_time": { "name": "Status changed" }
+    }
+  },
+  "exceptions": {
+    "set_status_failed": {
+      "message": "Setting the status failed: {error}"
+    }
+  }
+}

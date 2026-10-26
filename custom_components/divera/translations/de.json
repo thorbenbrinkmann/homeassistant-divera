@@ -1,0 +1,113 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "DIVERA 24/7 Konto",
+        "description": "Alle Einheiten des Kontos und ihre Fahrzeuge werden automatisch hinzugefügt.",
+        "data": {
+          "access_key": "Accesskey",
+          "scan_interval": "Abfrageintervall"
+        },
+        "data_description": {
+          "access_key": "Persönlicher API-Accesskey, zu finden in DIVERA 24/7 unter Einstellungen → Login → API-Keys.",
+          "scan_interval": "Fallback-Abfrageintervall in Sekunden, falls die WebSocket-Verbindung unterbrochen ist."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Accesskey erneut eingeben",
+        "description": "DIVERA 24/7 hat den Accesskey abgelehnt. Bitte einen gültigen eingeben.",
+        "data": {
+          "access_key": "Accesskey"
+        },
+        "data_description": {
+          "access_key": "Persönlicher API-Accesskey, zu finden in DIVERA 24/7 unter Einstellungen → Login → API-Keys."
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "DIVERA 24/7 hat den Accesskey abgelehnt.",
+      "cannot_connect": "Verbindung zu DIVERA 24/7 fehlgeschlagen.",
+      "no_units": "Das Konto gehört zu keiner Einheit."
+    },
+    "abort": {
+      "already_configured": "Dieses Konto ist bereits eingerichtet.",
+      "reauth_successful": "Erneute Anmeldung erfolgreich."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "DIVERA 24/7 Optionen",
+        "data": {
+          "scan_interval": "Abfrageintervall"
+        },
+        "data_description": {
+          "scan_interval": "Fallback-Abfrageintervall in Sekunden, falls die WebSocket-Verbindung unterbrochen ist."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "alarm_active": {
+        "name": "Aktiver Alarm",
+        "state": {
+          "on": "Alarm aktiv",
+          "off": "Kein Alarm"
+        }
+      },
+      "alarm_priority": { "name": "Alarm mit Sonderrechten" },
+      "alarm_closed": { "name": "Alarm beendet" }
+    },
+    "device_tracker": {
+      "alarm_location": { "name": "Einsatzort" },
+      "vehicle_location": { "name": "Position" }
+    },
+    "event": {
+      "alarm": {
+        "name": "Alarm",
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "new_alarm": "Neuer Alarm",
+              "alarm_closed": "Alarm beendet"
+            }
+          }
+        }
+      }
+    },
+    "select": {
+      "user_status": { "name": "Mein Status" }
+    },
+    "sensor": {
+      "alarm_title": { "name": "Alarm-Stichwort" },
+      "alarm_text": { "name": "Alarmtext" },
+      "alarm_address": { "name": "Alarm-Adresse" },
+      "alarm_date": { "name": "Alarmzeit" },
+      "alarm_vehicles": { "name": "Alarmierte Fahrzeuge" },
+      "alarm_id": { "name": "Alarm-ID" },
+      "fms_status": {
+        "name": "FMS-Status",
+        "state": {
+          "0": "0 - Priorisierter Sprechwunsch",
+          "1": "1 - Einsatzbereit über Funk",
+          "2": "2 - Einsatzbereit auf Wache",
+          "3": "3 - Einsatz übernommen",
+          "4": "4 - Am Einsatzort",
+          "5": "5 - Sprechwunsch",
+          "6": "6 - Nicht einsatzbereit",
+          "7": "7 - Patient aufgenommen",
+          "8": "8 - Am Transportziel",
+          "9": "9 - Sonstiges"
+        }
+      },
+      "fms_note": { "name": "Status-Notiz" },
+      "fms_time": { "name": "Status geändert" }
+    }
+  },
+  "exceptions": {
+    "set_status_failed": {
+      "message": "Status setzen fehlgeschlagen: {error}"
+    }
+  }
+}

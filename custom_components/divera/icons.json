@@ -1,0 +1,28 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "alarm_active": { "default": "mdi:bell-ring" },
+      "alarm_priority": { "default": "mdi:alarm-light" },
+      "alarm_closed": { "default": "mdi:check-circle-outline" }
+    },
+    "device_tracker": {
+      "alarm_location": { "default": "mdi:map-marker-alert" },
+      "vehicle_location": { "default": "mdi:fire-truck" }
+    },
+    "event": {
+      "alarm": { "default": "mdi:alarm-light" }
+    },
+    "select": {
+      "user_status": { "default": "mdi:account-check" }
+    },
+    "sensor": {
+      "alarm_title": { "default": "mdi:alarm-light" },
+      "alarm_text": { "default": "mdi:text" },
+      "alarm_address": { "default": "mdi:map-marker" },
+      "alarm_vehicles": { "default": "mdi:fire-truck" },
+      "alarm_id": { "default": "mdi:identifier" },
+      "fms_status": { "default": "mdi:radio-handheld" },
+      "fms_note": { "default": "mdi:note-text-outline" }
+    }
+  }
+}

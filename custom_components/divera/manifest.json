@@ -1,0 +1,17 @@
+{
+  "domain": "divera",
+  "name": "DIVERA 24/7",
+  "categories": [
+    "messaging_notifications"
+  ],
+  "codeowners": [
+    "@thorbenbrinkmann"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/thorbenbrinkmann/homeassistant-divera",
+  "integration_type": "hub",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/thorbenbrinkmann/homeassistant-divera/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
